@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Internship Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="animated-bg">
+        <div class="floating-bubble" style="width:100px;height:100px;top:10%;left:20%;animation-delay:0s;"></div>
+        <div class="floating-bubble" style="width:60px;height:60px;top:50%;left:10%;animation-delay:2s;"></div>
+        <div class="floating-bubble" style="width:80px;height:80px;top:70%;left:80%;animation-delay:4s;"></div>
+        <div class="floating-bubble" style="width:120px;height:120px;top:30%;left:50%;animation-delay:1s;"></div>
+        <div class="floating-bubble" style="width:50px;height:50px;top:80%;left:70%;animation-delay:3s;"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">PM Internships</div>
+            <div class="nav-links">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#" class="nav-link">About</a>
+                <button class="profile-btn" onclick="openProfileModal()">Create Profile</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <h1 class="hero-title">Find Your Dream Internship</h1>
+        <p class="hero-subtitle">Personalized recommendations based on your skills and interests.</p>
+
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="searchInput" class="search-input" placeholder="Enter skills, or click the mic to speak">
+                <input type="text" id="locationInput" class="search-input location-input" placeholder="Location, e.g., India">
+                <button class="search-btn" id="voiceSearchBtn" style="padding: 0.8rem 1.2rem;">🎙️</button>
+                <button class="search-btn" onclick="performSearch()">Find Internships</button>
+            </div>
+
+            <div class="quick-filters">
+                <div class="filter-chip" onclick="toggleFilter(this,'Python')">Python</div>
+                <div class="filter-chip" onclick="toggleFilter(this,'Marketing')">Marketing</div>
+                <div class="filter-chip" onclick="toggleFilter(this,'Design')">Design</div>
+                <div class="filter-chip" onclick="toggleFilter(this,'Data Science')">Data Science</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recommendationsSection" class="recommendations-section">
+        <h2 class="section-title">Recommended Internships</h2>
+        <div id="internshipGrid" class="internship-grid"></div>
+        <div id="loadingSpinner" class="loading-spinner"></div>
+    </section>
+
+    <div id="profileModal" class="profile-modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeProfileModal()">×</button>
+            <h2 class="form-title">Create Your Profile</h2>
+            <div class="form-group">
+                <label class="form-label" for="profileName">Name</label>
+                <input type="text" id="profileName" class="form-input">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="profileSkills">Skills</label>
+                <input type="text" id="profileSkills" class="form-input" placeholder="Comma separated">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="profileInterests">Interests</label>
+                <input type="text" id="profileInterests" class="form-input">
+            </div>
+            <button class="submit-btn" onclick="submitProfile()">Submit Profile</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <div class="chat-toggle" id="chatToggle">
+        <span>💬</span>
+    </div>
+
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <h3>Internship Assistant</h3>
+            <button class="close-chat" id="closeChat">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <p>Hello! How can I help you find an internship today? Try asking something like "Show me react jobs in the USA".</p>
+            </div>
+        </div>
+        <form class="chat-input-form" id="chatForm">
+            <input type="text" id="chatInput" placeholder="Type your message...">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    </body>
+</html>
