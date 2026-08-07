@@ -6,13 +6,13 @@ from itertools import zip_longest
 # ------------------------------
 # API KEYS (replace with your own if needed)
 # ------------------------------
-JOOBLE_API_KEY = os.getenv("JOOBLE_API_KEY", "d0be2dbb-3cbc-48ce-b5f8-9c6cbd935cb7")
-ADZUNA_APP_ID = os.getenv("ADZUNA_APP_ID", "ba21a67a")
-ADZUNA_APP_KEY = os.getenv("ADZUNA_APP_KEY", "8033b5fb1e428f5e7ecd009566b8a546")
+JOOBLE_API_KEY = os.getenv("JOOBLE_API_KEY", "api_key")
+ADZUNA_APP_ID = os.getenv("ADZUNA_APP_ID", "api_key")
+ADZUNA_APP_KEY = os.getenv("ADZUNA_APP_KEY", "api_key")
 
 # ✅ USAJOBS details
-USAJOBS_USER_AGENT = os.getenv("USAJOBS_USER_AGENT", "astitvapal5@gmail.com")  # must be registered email
-USAJOBS_API_KEY = os.getenv("USAJOBS_API_KEY", "bm2LDDPGKvvrnB/yAHp5lRKPRU9AfDXMg4p+CDqOErc=")
+USAJOBS_USER_AGENT = os.getenv("USAJOBS_USER_AGENT", "email@xyz")  # must be registered email
+USAJOBS_API_KEY = os.getenv("USAJOBS_API_KEY", "api_key")
 
 
 # ------------------------------
